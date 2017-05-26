@@ -1,16 +1,24 @@
 
 import urllib.request as re
 import urllib.error as er
+import sys
+import argparse
 
 from bs4 import BeautifulSoup
 import ssl
 
+sys.tracebacklimit= None
+
 context=ssl._create_unverified_context()
 site="https://en.wikipedia.org/wiki/"
-print("enter search query:")
-search=input()
-site_new=site+search
+
 try:
+    if len(sys.argv)>2:
+        raise Exception("too many arguments usage: wiki_data.py <arg1> \n[use \" \" to enclose argument with spaces]")
+    site_new=site+sys.argv[1]
+    print(site_new)
+
+
 
     page=re.urlopen(site_new,context=context)
 
@@ -27,6 +35,9 @@ try:
 
 except er.HTTPError as er1:
     print("no result")
+except IndexError:
+    print("usage: wiki_data.py <arg1> \n[use \" \" to enclose argument with spaces]")
+
 
 
 
