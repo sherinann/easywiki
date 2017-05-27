@@ -1,8 +1,8 @@
 # easywiki
 this is a python script to access information about any subject from wikipedia through command line
 
-#requirements
+# requirements
 python 3
 
-#how to use
+# how to use
 python3 wiki_data.py <search string>
