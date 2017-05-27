@@ -2,7 +2,7 @@
 import urllib.request as re
 import urllib.error as er
 import sys
-import argparse
+
 
 from bs4 import BeautifulSoup
 import ssl
@@ -16,7 +16,7 @@ try:
     if len(sys.argv)>2:
         raise Exception("too many arguments usage: wiki_data.py <arg1> \n[use \" \" to enclose argument with spaces]")
     site_new=site+sys.argv[1]
-    print(site_new)
+
 
 
 
