@@ -3,6 +3,7 @@ this is a python script to access information about any subject from wikipedia t
 
 # requirements
 python 3
+bs4
 
 # how to use
 `python3  wiki_data.py  search_string`
