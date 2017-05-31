@@ -51,11 +51,6 @@ try:
         else:
             continue
 
-    for tag in tags:
-        if tag.name in tag_head:
-            print(tag.text)
-
-    print('hey')
 
 
 except er.HTTPError as er1:
