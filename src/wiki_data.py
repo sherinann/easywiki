@@ -32,22 +32,22 @@ try:
     page=re.urlopen(site_new,context=context)
 
     soup=BeautifulSoup(page,"html.parser")
-    #print(soup.get_text)
+   # print(soup.get_text)
 
 
 
     tag_head=['h1','h2','h3','h4','h5','h6']
-    tag_para=['p']
+    tag_para=['p','li']
 
     tags= soup.findAll()
     for tag in tags:
         if tag.name in tag_head:
-            if tag.text=='References':
+            if tag.text=='References' or tag.text=='Navigation menu':
                 break
             else:
                 print(OKBLUE+tag.text+ENDC)
         elif tag.name in tag_para:
-            print(tag.text)
+                print(tag.text)
         else:
             continue
 
