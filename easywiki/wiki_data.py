@@ -24,18 +24,19 @@ context=ssl._create_unverified_context()
 
 
 
-def getSpecialResult(arg):
-    searchQuery=arg.replace(" ", "+")
-    print(searchQuery)
+def getSpecialResult(searchSpecialBeg,searchSpecialEnd,searchItem):
 
-    print(search)
-    page = re.urlopen(search, context=context)
+    searchQuery=searchItem.replace(" ", "+")
+    site_new=searchSpecialBeg+searchQuery+searchSpecialEnd
+    page = re.urlopen(site_new, context=context)
 
     soup = BeautifulSoup(page, "html.parser")
     #print(soup.get_text)
 
-    for tags in soup.find(name='ul',attrs={"class":"mw-search-results"}).find('li'):
-        print(tags.text)
+    for tags in soup.find(name='div',attrs={"class":"mw-search-result-heading"}).findAll('a'):
+
+           # print(tags.text)
+            return tags.text
 
 
 
@@ -48,7 +49,7 @@ def getResult(site,searchItem):
         page = re.urlopen(site_new, context=context)
 
         soup = BeautifulSoup(page, "html.parser")
-        print(soup.get_text)
+        #print(soup.get_text)
 
 
         tags = soup.findAll()
@@ -63,8 +64,10 @@ def getResult(site,searchItem):
                 print(tag.text)
             else:
                 continue
+        return 1
+
     except er.HTTPError as er1:
-        getSpecialResult(searchItem)
+        return 0
 
 
 
