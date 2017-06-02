@@ -18,9 +18,12 @@ try:
         raise Exception( "too many arguments usage: wiki_data.py <arg1> \n[use \" \" to enclose argument with spaces]")
     else:
         searchItem=sys.argv[1]
-        print(siteDefault)
-        wiki_data.getResult(siteDefault,searchItem)
-     
+
+        status=wiki_data.getResult(siteDefault,searchItem)
+        if status==0:
+            key=wiki_data.getSpecialResult(searchSpecialBeg,searchSpecialEnd,searchItem)
+            wiki_data.getResult(siteDefault,key)
+
 
 
 except IndexError:
