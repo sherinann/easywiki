@@ -6,7 +6,7 @@ if not sys.version_info[0] == 3:
 
 setup(
     name='easywiki',
-    version='1.0.0dev',
+    version='1.0.1dev',
     packages=['easywiki'],
     entry_points = {"console_scripts": ['easywiki = easywiki.__main__:main']},
     install_requires=['bs4',],
