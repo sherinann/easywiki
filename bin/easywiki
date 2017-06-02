@@ -1,5 +1,6 @@
+#!/usr/bin/env python3
 
-import ssl
+
 import sys
 from easywiki import wiki_data
 
@@ -28,7 +29,7 @@ def main():
 
 
     except IndexError:
-        print("usage: wiki_data.py <arg1> \n[use \" \" to enclose argument with spaces]")
+        print("usage: easywiki  <arg1> \n[use \" \" to enclose argument with spaces]")
 
 if __name__ == '__main__':
     main()
