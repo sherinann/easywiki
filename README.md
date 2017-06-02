@@ -1,4 +1,7 @@
 # easywiki
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6c54f548720e48cabf01792181e97860)](https://www.codacy.com/app/sherinannthomas1/easywiki?utm_source=github.com&utm_medium=referral&utm_content=sherinann/easywiki&utm_campaign=badger)
+
 this is a python script to access information about any subject from wikipedia through command line
 
 # Requirements
